@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export PATH=/command:$PATH
+
+exec 2>&1
+exec envdir ./env sh -c '
+	$PERLBAL -c $PWD/root/perlbal.conf $PERLBAL_OPTS
+'
